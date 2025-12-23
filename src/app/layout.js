@@ -5,7 +5,7 @@ const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
 });
-
+//j
 const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
