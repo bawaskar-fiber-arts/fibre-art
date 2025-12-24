@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "ALL", "image": "/all_category_bg.png" },
+  { "id": 2, "name": "GIFTING", "image": "/blog-hampers.png" },
+  { "id": 3, "name": "SPIRITUAL (GOD IDOLS)", "image": "/hero-ganesha.png" },
+  { "id": 4, "name": "HOME DECOR", "image": "/whatsnew-conch.png" },
+  { "id": 5, "name": "POOJA ESSENTIALS", "image": "/hero-diya.png" },
+  { "id": 6, "name": "CAR DASHBOARD", "image": "/whatsnew-dashboard.png" },
+  { "id": 7, "name": "FESTIVAL DECOR", "image": "/blog-diwali.png" }
+]

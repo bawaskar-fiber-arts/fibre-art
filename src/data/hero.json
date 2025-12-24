@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "title1": "Chhatrapati",
+        "title2": "Shivaji",
+        "title3": "Maharaj",
+        "subtitle": "The Great Maratha Warrior",
+        "desc": "Majestic Bronze Finish Statue",
+        "image": "/shivaji_maharaj.png",
+        "bgGradient": "from-[#2A1B0E]/90 via-[#3E2723]/80 to-transparent",
+        "bgColor": "bg-[#1A120B]",
+        "titleColor": "text-[#D4AF37]",
+        "accentColor": "text-[#E65100]/80",
+        "scriptColor": "text-orange-100"
+    },
+    {
+        "id": 2,
+        "title1": "Chhatrapati",
+        "title2": "Sambhaji",
+        "title3": "Maharaj",
+        "subtitle": "Symbol of Sacrifice",
+        "desc": "Premium Detailed Idol",
+        "image": "/sambhaji_maharaj.png",
+        "bgGradient": "from-[#3E2723]/90 via-[#4E342E]/80 to-transparent",
+        "bgColor": "bg-[#271C19]",
+        "titleColor": "text-[#FFD700]",
+        "accentColor": "text-[#FF6F00]/80",
+        "scriptColor": "text-yellow-100"
+    },
+    {
+        "id": 3,
+        "title1": "Divine",
+        "title2": "Vitthal",
+        "title3": "Rukhmini",
+        "subtitle": "Pandharpur's Pride",
+        "desc": "Black Stone Finish Idol",
+        "image": "/vitthal_rukhmini.png",
+        "bgGradient": "from-[#1B1B1B]/90 via-[#333333]/80 to-transparent",
+        "bgColor": "bg-[#0A0A0A]",
+        "titleColor": "text-[#E0E0E0]",
+        "accentColor": "text-[#BDBDBD]",
+        "scriptColor": "text-gray-200"
+    },
+    {
+        "id": 4,
+        "title1": "Saint",
+        "title2": "Gajanan",
+        "title3": "Maharaj",
+        "subtitle": "Gan Gan G anat Bote",
+        "desc": "Peaceful Marble Finish",
+        "image": "/gajanan_maharaj.png",
+        "bgGradient": "from-[#F5F5F5]/90 via-[#E0E0E0]/80 to-transparent",
+        "bgColor": "bg-[#F5F5F5]",
+        "titleColor": "text-[#424242]",
+        "accentColor": "text-[#616161]",
+        "scriptColor": "text-gray-500",
+        "isLight": true
+    }
+]

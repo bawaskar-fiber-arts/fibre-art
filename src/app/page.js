@@ -12,6 +12,8 @@ import { useState } from "react";
 
 import Footer from "@/components/Footer";
 
+import Services from "@/components/Services";
+
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
 
@@ -19,9 +21,10 @@ export default function Home() {
     <main className="min-h-screen flex flex-col bg-white">
       <Header />
       <Hero />
-      <Category 
-        selectedCategory={selectedCategory} 
-        onSelectCategory={setSelectedCategory} 
+      <Services />
+      <Category
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
       />
       <BestSellers selectedCategory={selectedCategory} />
       <WhatsNew />

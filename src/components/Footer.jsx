@@ -7,73 +7,54 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#A68B51] text-[#F9F6F0] pt-16 pb-8 font-sans">
+    <footer className="bg-[#D4AF37] text-[#2B1B17] pt-16 pb-8 font-sans">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 relative">
 
           {/* Column 1: Customer Service */}
           <div>
-            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Customer Service & FAQ</h3>
-            <ul className="flex flex-col gap-3 text-sm font-light">
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Track Order</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Frequently Asked Questions (FAQs)</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Return & Refund Policy</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Contact us</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Shipping Policy</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Buyback Program</Link></li>
+            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Customer Service</h3>
+            <ul className="flex flex-col gap-3 text-sm font-medium">
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+              <li><Link href="/collection" className="hover:text-white transition-colors">Collection</Link></li>
             </ul>
           </div>
 
-          {/* Column 2: About */}
+          {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">About</h3>
-            <ul className="flex flex-col gap-3 text-sm font-light">
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">About Bawaskar Fiber Arts</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Sustainability & Impact</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Jobs & Career</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Our Blog</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Privacy Policy</Link></li>
+            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Quick Links</h3>
+            <ul className="flex flex-col gap-3 text-sm font-medium">
+              <li><Link href="/collection?category=SPIRITUAL" className="hover:text-white transition-colors">God Idols</Link></li>
+              <li><Link href="/collection?category=HOME%20DECOR" className="hover:text-white transition-colors">Home Decor</Link></li>
+              <li><Link href="/collection?category=GIFTING" className="hover:text-white transition-colors">Gifting</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Popular Now */}
+          {/* Column 3: Contact */}
           <div>
-            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Popular Now</h3>
-            <ul className="flex flex-col gap-3 text-sm font-light">
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Traditional Wedding Gifts</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Housewarming Gifts</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Wedding Return Gifts</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Car Dashboard Idols</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Corporate Gifts</Link></li>
-              <li><Link href="#" className="hover:text-[#2B1B17] transition-colors">Radha Krishna Gifts For Marriage</Link></li>
-            </ul>
+             <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Contact</h3>
+             <ul className="flex flex-col gap-3 text-sm font-medium">
+                 <li>+91 94296 90080</li>
+                 <li>contact@bawaskar.in</li>
+                 <li>Pandharpur, Maharashtra</li>
+             </ul>
           </div>
 
-          {/* Column 4: Our Store */}
+          {/* Column 4: Socials */}
           <div>
-            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Our store</h3>
-            <p className="text-sm font-light mb-4 leading-relaxed">
-              For any suggestions, queries or complaints please contact us at:
-            </p>
-            <div className="text-sm font-medium mb-6">
-              <p>+91 9429690080</p>
-              <p>contact@bawaskar.in</p>
-            </div>
-
+            <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Follow Us</h3>
             <div className="flex gap-4">
-              <Link href="#" className="bg-[#7D6636] p-2 rounded-full hover:bg-[#5C4B25] transition-colors"><div className="w-4 h-4 flex items-center justify-center font-bold">P</div></Link>
-              <Link href="#" className="bg-[#7D6636] p-2 rounded-full hover:bg-[#5C4B25] transition-colors"><Facebook size={16} /></Link>
-              <Link href="#" className="bg-[#7D6636] p-2 rounded-full hover:bg-[#5C4B25] transition-colors"><Instagram size={16} /></Link>
-              <Link href="#" className="bg-[#7D6636] p-2 rounded-full hover:bg-[#5C4B25] transition-colors"><Twitter size={16} /></Link>
-              <Link href="#" className="bg-[#7D6636] p-2 rounded-full hover:bg-[#5C4B25] transition-colors"><Linkedin size={16} /></Link>
-              <Link href="#" className="bg-[#7D6636] p-2 rounded-full hover:bg-[#5C4B25] transition-colors"><Youtube size={16} /></Link>
+              <Link href="#" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Facebook size={18} /></Link>
+              <Link href="#" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Instagram size={18} /></Link>
+              <Link href="#" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Twitter size={18} /></Link>
             </div>
 
-            {/* Floating Scroll Top Button (positioned relative to container or fixed) */}
+            {/* Floating Scroll Top Button */}
             <button
               onClick={scrollToTop}
-              className="absolute right-0 bottom-0 md:-right-4 bg-[#7D4E24] hover:bg-[#5D3A1B] text-white p-3 rounded shadow-lg transition-transform hover:-translate-y-1"
+              className="absolute right-0 bottom-0 md:-right-4 bg-[#2B1B17] hover:bg-[#4A3B32] text-[#D4AF37] p-3 rounded shadow-lg transition-transform hover:-translate-y-1"
               aria-label="Scroll to top"
             >
               <ArrowUp size={20} />
@@ -82,9 +63,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#BCA673] pt-8 text-xs font-light text-[#2B1B17]/80">
+        <div className="border-t border-[#2B1B17]/20 pt-8 text-xs font-medium text-[#2B1B17]/80 text-center md:text-left">
           <p>
-            &copy; Bawaskar Fiber Arts | Made with <span className="text-red-600">❤</span> in India
+            &copy; {new Date().getFullYear()} Bawaskar Fiber Arts | <span className="hidden md:inline">Crafting Devotion</span>
           </p>
         </div>
       </div>

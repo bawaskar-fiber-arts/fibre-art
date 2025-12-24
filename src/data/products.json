@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Lord Balaji Face Idol - Silver Plated",
+        "category": "SPIRITUAL (GOD IDOLS)",
+        "description": "Exquisitely crafted Lord Balaji face idol with premium silver plating. Perfect for home temples and gifting on auspicious occasions.",
+        "price": 1250.00,
+        "image": "/hero-ganesha.png"
+    },
+    {
+        "id": 2,
+        "name": "Silver plated Kamdhenu Cow with Calf Idol",
+        "category": "HOME DECOR",
+        "description": "Symbol of prosperity and motherly love, this Kamdhenu cow with calf is beautiful.",
+        "price": 1299.00,
+        "image": "/whatsnew-tortoise.png"
+    },
+    {
+        "id": 3,
+        "name": "Ashtalakshmi Tortoise Idol - Silver Plated",
+        "category": "HOME DECOR",
+        "description": "Bring good luck and stability with this detailed Ashtalakshmi Tortoise. A must-have for Vastu compliance.",
+        "price": 1499.00,
+        "image": "/whatsnew-tortoise.png"
+    },
+    {
+        "id": 4,
+        "name": "Kamdhenu Cow with Calf Idol - Gold Plated",
+        "category": "SPIRITUAL (GOD IDOLS)",
+        "description": "Radiant gold plated Kamdhenu idol. Adds a divine touch to your living room or pooja altar.",
+        "price": 1449.00,
+        "image": "/whatsnew-conch.png"
+    },
+    {
+        "id": 14,
+        "name": "Chhatrapati Shivaji Maharaj Statue",
+        "category": "HOME DECOR",
+        "description": "Detailed bronze finish statue of The Great Maratha Warrior. A symbol of pride and valor.",
+        "price": 4500.00,
+        "image": "/shivaji_maharaj.png"
+    },
+    {
+        "id": 15,
+        "name": "Sambhaji Maharaj Idol",
+        "category": "HOME DECOR",
+        "description": "Regal idol of Chhatrapati Sambhaji Maharaj in warrior pose, inspiring courage and sacrifice.",
+        "price": 4800.00,
+        "image": "/sambhaji_maharaj.png"
+    },
+    {
+        "id": 16,
+        "name": "Vitthal Rukhmini Idol",
+        "category": "SPIRITUAL (GOD IDOLS)",
+        "description": "Divine Vitthal and Rukhmini idol, handcrafted with black stone texture finish for authentic look.",
+        "price": 3200.00,
+        "image": "/vitthal_rukhmini.png"
+    },
+    {
+        "id": 17,
+        "name": "Gajanan Maharaj Idol",
+        "category": "SPIRITUAL (GOD IDOLS)",
+        "description": "Peaceful Shegaon Gajanan Maharaj idol in marble finish. Brings spiritual calmness to your home.",
+        "price": 2100.00,
+        "image": "/gajanan_maharaj.png"
+    },
+    {
+        "id": 6,
+        "name": "Antique Silver Conch Shell",
+        "category": "HOME DECOR",
+        "description": "Traditional Vamavarti Shankh with antique silver finish. Ideal for pooja rituals and decor.",
+        "price": 2100.00,
+        "image": "/whatsnew-conch.png"
+    },
+    {
+        "id": 7,
+        "name": "Brass Diya Lamp Stand (Pair)",
+        "category": "POOJA ESSENTIALS",
+        "description": "Set of 2 elegant brass diya stands. Tall and sturdy, perfect for festive lighting.",
+        "price": 3500.00,
+        "image": "/hero-diya.png"
+    },
+    {
+        "id": 8,
+        "name": "Zen Buddha Indoor Water Fountain",
+        "category": "HOME DECOR",
+        "description": "Create a serene atmosphere with this Zen Buddha water fountain. Includes LED lights.",
+        "price": 4200.00,
+        "image": "/hero-buddha.png"
+    },
+    {
+        "id": 9,
+        "name": "Lord Shiva Car Dashboard Idol",
+        "category": "CAR DASHBOARD",
+        "description": "Compact and detailed Lord Shiva idol for car dashboards. Divine protection on every journey.",
+        "price": 599.00,
+        "image": "/whatsnew-dashboard.png"
+    }
+]

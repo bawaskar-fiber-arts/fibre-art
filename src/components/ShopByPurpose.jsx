@@ -1,62 +1,85 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-
-const categories = [
-  { id: 1, name: "ALL", image: null }, // Special case for ALL
-  { id: 2, name: "GIFTING", image: "/blog-hampers.png" },
-  { id: 3, name: "SPIRITUAL (GOD IDOLS)", image: "/hero-ganesha.png" },
-  { id: 4, name: "HOME DECOR", image: "/whatsnew-conch.png" },
-  { id: 5, name: "POOJA ESSENTIALS", image: "/hero-diya.png" },
-  { id: 6, name: "CAR DASHBOARD", image: "/whatsnew-dashboard.png" },
-  { id: 7, name: "FESTIVAL DECOR", image: "/blog-diwali.png" },
-];
+import categories from "../data/categories.json";
+import { motion } from "framer-motion";
 
 export default function Category({ selectedCategory, onSelectCategory }) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
   return (
-    <section className="py-12 bg-[#F9F6F0]">
+    <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif text-center text-gray-800 mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl font-serif text-center text-[#2B1B17] mb-10 tracking-wide"
+        >
           Category
-        </h2>
-        
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+        </motion.h2>
+
+        {/* Horizontal Scrollable/Flex Container */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-6 md:gap-10"
+        >
           {categories.map((cat) => (
-            <button 
-                key={cat.id} 
-                onClick={() => onSelectCategory(cat.name)}
-                className="group flex flex-col items-center focus:outline-none"
+            <motion.button
+              key={cat.id}
+              variants={itemVariants}
+              onClick={() => onSelectCategory(cat.name)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group flex flex-col items-center focus:outline-none"
             >
-              <div 
-                className={`relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-md transition-all duration-300 group-hover:-translate-y-1 ${
-                    selectedCategory === cat.name ? 'ring-4 ring-[#D4AF37] scale-105' : 'group-hover:shadow-xl'
-                }`}
+              <div
+                className={`relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg transition-shadow duration-300 group-hover:-translate-y-2 bg-white ${selectedCategory === cat.name ? 'ring-4 ring-[#AF984E]' : ''}`}
               >
-                {cat.name === "ALL" ? (
-                    <div className="absolute inset-0 bg-[#D4AF37] flex items-center justify-center text-white font-serif font-bold text-lg">
-                        ALL
-                    </div>
-                ) : (
-                    <>
-                        <div className="absolute inset-0 bg-gray-200"></div> 
-                         <Image
-                          src={cat.image}
-                          alt={cat.name}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                    </>
+                <Image
+                  src={cat.image}
+                  alt={cat.name}
+                  fill
+                  className="object-cover"
+                />
+                {/* Optional Overlay for ALL to make it distinct if needed, or just pure image */}
+                {cat.name === "ALL" && (
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <span className="text-white font-serif text-xl md:text-2xl font-medium tracking-widest">ALL</span>
+                  </div>
                 )}
               </div>
-              <span className={`mt-4 text-xs md:text-sm font-bold tracking-wide transition-colors text-center px-2 ${
-                  selectedCategory === cat.name ? 'text-[#D4AF37]' : 'text-gray-700 group-hover:text-[#D4AF37]'
-              }`}>
+              <span className={`mt-4 text-[10px] md:text-xs font-bold tracking-widest uppercase text-center max-w-[120px] ${(cat.name === "ALL" || selectedCategory === cat.name) ? 'text-[#AF984E]' : 'text-[#4A4A4A] group-hover:text-[#AF984E]'
+                }`}>
                 {cat.name}
               </span>
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
