@@ -49,11 +49,11 @@
         "subtitle": "Gan Gan G anat Bote",
         "desc": "Peaceful Marble Finish",
         "image": "/gajanan_maharaj.png",
-        "bgGradient": "from-[#F5F5F5]/90 via-[#E0E0E0]/80 to-transparent",
-        "bgColor": "bg-[#F5F5F5]",
+        "bgGradient": "from-[#FFF8E1]/90 via-[#FFECB3]/80 to-transparent",
+        "bgColor": "bg-[#FFF8E1]",
         "titleColor": "text-[#424242]",
         "accentColor": "text-[#616161]",
-        "scriptColor": "text-gray-500",
+        "scriptColor": "text-orange-300",
         "isLight": true
     }
 ]
