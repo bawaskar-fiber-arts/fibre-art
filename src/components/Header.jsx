@@ -76,8 +76,8 @@ export default function Header() {
                         <span
                             key={index}
                             className={`absolute transition-all duration-500 transform ${index === marqueeIndex
-                                    ? 'opacity-100 translate-y-0'
-                                    : 'opacity-0 translate-y-4'
+                                ? 'opacity-100 translate-y-0'
+                                : 'opacity-0 translate-y-4'
                                 }`}
                         >
                             {msg}
@@ -154,7 +154,7 @@ export default function Header() {
                         </button>
 
                         {/* WhatsApp Icon */}
-                        <Link href="https://wa.me/919429690080" target="_blank" className="text-green-600 hover:text-green-700 transition-colors relative">
+                        <Link href="https://wa.me/918554875216" target="_blank" className="text-green-600 hover:text-green-700 transition-colors relative">
                             <MessageCircle size={22} className="fill-current" />
                         </Link>
                     </div>

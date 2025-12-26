@@ -2,13 +2,29 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, ZoomIn, MessageCircle } from "lucide-react";
-import products from "../data/products.json";
 import { motion, AnimatePresence } from "framer-motion";
+import { fetchItems } from "../lib/firestoreService";
 
 export default function BestSellers({ selectedCategory, searchQuery = "" }) {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [zoomedImage, setZoomedImage] = useState(null);
+
+    useEffect(() => {
+        async function loadItems() {
+            try {
+                const fetchedItems = await fetchItems();
+                setProducts(fetchedItems);
+            } catch (error) {
+                console.error("Error loading items:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadItems();
+    }, []);
 
     // Filter Logic
     const filteredProducts = products.filter(p => {
@@ -20,7 +36,15 @@ export default function BestSellers({ selectedCategory, searchQuery = "" }) {
 
     const getWhatsappLink = (productName) => {
         const message = `I'm interested in getting a quotation for: ${productName}`;
-        return `https://wa.me/919429690080?text=${encodeURIComponent(message)}`;
+        return `https://wa.me/918554875216?text=${encodeURIComponent(message)}`;
+    };
+
+    // Helper function to parse price string
+    const parsePrice = (priceString) => {
+        if (typeof priceString === 'number') return priceString;
+        // Remove commas and convert to number
+        const cleanPrice = priceString.replace(/,/g, '');
+        return parseFloat(cleanPrice) || 0;
     };
 
     return (
@@ -37,12 +61,15 @@ export default function BestSellers({ selectedCategory, searchQuery = "" }) {
                     </motion.h2>
                 </div>
 
-                {filteredProducts.length === 0 ? (
+                {loading ? (
+                    <div className="flex justify-center items-center py-12">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D4AF37]"></div>
+                    </div>
+                ) : filteredProducts.length === 0 ? (
                     <div className="text-center text-gray-400 py-10">
                         <p>No products found matching your criteria.</p>
                     </div>
                 ) : (
-                    // Grid: 2 columns on mobile (compact), 3 on tablet, 4 on large desktop
                     <motion.div
                         layout
                         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"
@@ -59,7 +86,7 @@ export default function BestSellers({ selectedCategory, searchQuery = "" }) {
                                     className="group flex flex-col bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow border border-gray-100 overflow-hidden"
                                 >
 
-                                    {/* Image Container - Reduced height/aspect ratio */}
+                                    {/* Image Container */}
                                     <div className="relative w-full aspect-[4/3] bg-[#F5F5F5] overflow-hidden">
                                         <div
                                             className="relative w-full h-full cursor-zoom-in"
@@ -88,7 +115,7 @@ export default function BestSellers({ selectedCategory, searchQuery = "" }) {
                                             {product.name}
                                         </h3>
 
-                                        {/* Description - Hiding on mobile to save space if requested compact, or keep 2 lines */}
+                                        {/* Description */}
                                         <div className="hidden md:block text-[10px] md:text-xs text-gray-500 mb-2 line-clamp-2">
                                             {product.description}
                                         </div>
@@ -97,7 +124,7 @@ export default function BestSellers({ selectedCategory, searchQuery = "" }) {
                                         <div className="mt-auto pt-2 border-t border-gray-50">
                                             <div className="flex flex-col gap-1">
                                                 <span className="text-xs md:text-sm font-medium text-gray-500">From</span>
-                                                <span className="text-sm md:text-lg font-bold text-gray-900">₹ {product.price.toLocaleString('en-IN')}</span>
+                                                <span className="text-sm md:text-lg font-bold text-gray-900">₹ {parsePrice(product.price).toLocaleString('en-IN')}</span>
                                             </div>
 
                                             <Link

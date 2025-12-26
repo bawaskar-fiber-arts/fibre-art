@@ -26,7 +26,7 @@ export default function ContactPage() {
                                 <div className="bg-[#D4AF37]/10 p-3 rounded-full text-[#D4AF37]"><Phone size={24} /></div>
                                 <div>
                                     <p className="font-bold text-gray-800">Phone</p>
-                                    <a href="tel:+919429690080" className="text-gray-600 hover:text-[#D4AF37]">+91 9429690080</a>
+                                    <a href="tel:+918554875216" className="text-gray-600 hover:text-[#D4AF37]">8554875216</a>
                                 </div>
                             </div>
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
                                 <div className="bg-[#D4AF37]/10 p-3 rounded-full text-[#D4AF37]"><Mail size={24} /></div>
                                 <div>
                                     <p className="font-bold text-gray-800">Email</p>
-                                    <a href="mailto:contact@bawaskar.in" className="text-gray-600 hover:text-[#D4AF37]">contact@bawaskar.in</a>
+                                    <a href="mailto:bawaskarfiberarts1997@gmail.com" className="text-gray-600 hover:text-[#D4AF37]">bawaskarfiberarts1997@gmail.com</a>
                                 </div>
                             </div>
 
@@ -42,7 +42,7 @@ export default function ContactPage() {
                                 <div className="bg-[#D4AF37]/10 p-3 rounded-full text-[#D4AF37]"><MapPin size={24} /></div>
                                 <div>
                                     <p className="font-bold text-gray-800">Workshop & Store</p>
-                                    <p className="text-gray-600">Bawaskar Fiber Arts, Main Road, Pandharpur, Maharashtra, India - 413304</p>
+                                    <p className="text-gray-600 text-sm leading-relaxed">1) Near Vighnaharta Hotel, Khamgaon Road, Shegaon, Maharashtra, 444203<br />2) Near Gajanan Maharaj Mandir, Paschim Gate, Kumbhar Wada, Shegaon, Maharashtra, 444203</p>
                                 </div>
                             </div>
                         </div>
