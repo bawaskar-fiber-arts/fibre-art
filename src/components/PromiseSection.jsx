@@ -1,29 +1,29 @@
-import { Gift, HeartHandshake, RefreshCcw, Headset } from 'lucide-react';
+import { HeartHandshake, Palette, Headset, Package } from 'lucide-react';
 
 const promises = [
     {
         id: 1,
-        title: "Gift-Ready Elegance",
-        description: "Our premium packaging is perfect for gifting.",
-        icon: Gift
-    },
-    {
-        id: 2,
         title: "Handcrafted with Care",
         description: "Handcrafted and quality-checked for perfection.",
         icon: HeartHandshake
     },
     {
-        id: 3,
-        title: "Hassle-Free Returns",
-        description: "Enjoy the ease of 7-day returns, ensuring your complete satisfaction.",
-        icon: RefreshCcw
+        id: 2,
+        title: "Customizable for You",
+        description: "Personalize the product to match your style and preference.",
+        icon: Palette
     },
     {
-        id: 4,
+        id: 3,
         title: "Support That Cares",
         description: "Reach out to us anytime, 24/6, for dedicated assistance.",
         icon: Headset
+    },
+    {
+        id: 4,
+        title: "Secure Packaging",
+        description: "Perfect packing that keeps your product safe from damage.",
+        icon: Package
     }
 ];
 

@@ -75,7 +75,7 @@ export default function ContactPage() {
                     {/* Map Section */}
                     <div className="mt-16 w-full h-[300px] md:h-[400px] bg-gray-200 rounded-lg overflow-hidden shadow-md">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30058.60136283733!2d76.66622834375373!3d20.793617789420845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd745c11090332f%3A0x6291a8264775d714!2sShegaon%2C%20Maharashtra%20444203!5e0!3m2!1sen!2sin!4v1709123456789!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746.123456789012!2d76.6989876!3d20.793617800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd745c11090332f%3A0x6291a8264775d714!2sBawaskar%20Fiber%20Arts!5e0!3m2!1sen!2sin!4v1735714497000!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}

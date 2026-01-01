@@ -9,7 +9,7 @@ import Blogs from "@/components/Blogs";
 import PromiseSection from "@/components/PromiseSection";
 import JoinStory from "@/components/JoinStory";
 import Footer from "@/components/Footer";
-import Services from "@/components/Services";
+
 import StructuredData from "@/components/StructuredData";
 import { useState } from "react";
 
@@ -22,7 +22,6 @@ export default function Home() {
       <main className="min-h-screen flex flex-col bg-white">
         <Header />
         <Hero />
-        <Services />
         <Category
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}

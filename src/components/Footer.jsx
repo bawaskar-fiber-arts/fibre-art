@@ -49,7 +49,7 @@ export default function Footer() {
             <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Follow Us</h3>
             <div className="flex gap-4">
               <Link href="#" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Facebook size={18} /></Link>
-              <Link href="#" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Instagram size={18} /></Link>
+              <Link href="https://www.instagram.com/murtikar_ashish_bawaskar?igsh=MTZubzhnYnd5c292eA==" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Instagram size={18} /></Link>
               <Link href="#" className="bg-white/20 p-2 rounded-full hover:bg-white hover:text-[#D4AF37] transition-colors"><Twitter size={18} /></Link>
             </div>
 

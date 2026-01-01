@@ -12,16 +12,8 @@ export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [marqueeIndex, setMarqueeIndex] = useState(0);
     const [searchTerm, setSearchTerm] = useState("");
     const router = useRouter();
-
-    const marqueeMessages = [
-        "Spl. Discounted Prices on 📦 Bulk Orders",
-        "Free Shipping on Orders Above ₹999",
-        "New Festivale Collection is Live! ✨",
-        "Customization Available on Selected Idols"
-    ];
 
     const navLinks = [
         { name: "Home", href: "/" },
@@ -31,13 +23,7 @@ export default function Header() {
         { name: "Contacts", href: "/contact" },
     ];
 
-    // Marquee Timer
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setMarqueeIndex((prev) => (prev + 1) % marqueeMessages.length);
-        }, 3000); // Change every 3 seconds
-        return () => clearInterval(interval);
-    }, []);
+
 
     // Scroll Logic
     useEffect(() => {
@@ -69,22 +55,7 @@ export default function Header() {
 
     return (
         <div className="w-full flex flex-col font-sans relative">
-            {/* Top Banner with Fade Transition */}
-            <div className={`bg-[#D4AF37] text-svastika-brown text-sm font-medium py-2 relative z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-                <div className="flex justify-center items-center h-6 overflow-hidden relative">
-                    {marqueeMessages.map((msg, index) => (
-                        <span
-                            key={index}
-                            className={`absolute transition-all duration-500 transform ${index === marqueeIndex
-                                ? 'opacity-100 translate-y-0'
-                                : 'opacity-0 translate-y-4'
-                                }`}
-                        >
-                            {msg}
-                        </span>
-                    ))}
-                </div>
-            </div>
+
 
             {/* Main Navbar */}
             <nav
