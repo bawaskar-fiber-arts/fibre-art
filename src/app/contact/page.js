@@ -34,7 +34,7 @@ export default function ContactPage() {
                                 <div className="bg-[#D4AF37]/10 p-3 rounded-full text-[#D4AF37]"><Mail size={24} /></div>
                                 <div>
                                     <p className="font-bold text-gray-800">Email</p>
-                                    <a href="mailto:bawaskarfiberarts1997@gmail.com" className="text-gray-600 hover:text-[#D4AF37]">bawaskarfiberarts1997@gmail.com</a>
+                                    <a href="mailto:bawaskarfiberarts@gmail.com" className="text-gray-600 hover:text-[#D4AF37]">bawaskarfiberarts@gmail.com</a>
                                 </div>
                             </div>
 

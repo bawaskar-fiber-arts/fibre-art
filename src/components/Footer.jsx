@@ -37,8 +37,8 @@ export default function Footer() {
             <h3 className="font-serif text-lg text-[#2B1B17] mb-6 font-semibold">Contact Us</h3>
             <ul className="flex flex-col gap-3 text-sm font-medium">
               <li>Phone: 8554875216</li>
-              <li>bawaskarfiberarts1997@gmail.com</li>
-              <li className="leading-relaxed">Workshop \u0026 Store:<br />
+              <li>bawaskarfiberarts@gmail.com</li>
+              <li className="leading-relaxed">Workshop store:<br />
                 1) Near Vighnaharta Hotel, Khamgaon Road, Shegaon, Maharashtra, 444203<br />
                 2) Near Gajanan Maharaj Mandir, Paschim Gate, Kumbhar Wada, Shegaon, Maharashtra, 444203</li>
             </ul>
