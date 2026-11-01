@@ -9,7 +9,7 @@
         "image": "/shivaji_maharaj.png",
         "bgGradient": "from-[#2A1B0E]/90 via-[#3E2723]/80 to-transparent",
         "bgColor": "bg-[#1A120B]",
-        "titleColor": "text-[#D4AF37]",
+        "titleColor": "text-[#FF9933]",
         "accentColor": "text-[#E65100]/80",
         "scriptColor": "text-orange-100"
     },
@@ -23,9 +23,9 @@
         "image": "/sambhaji_maharaj.png",
         "bgGradient": "from-[#3E2723]/90 via-[#4E342E]/80 to-transparent",
         "bgColor": "bg-[#271C19]",
-        "titleColor": "text-[#FFD700]",
+        "titleColor": "text-[#FFB347]",
         "accentColor": "text-[#FF6F00]/80",
-        "scriptColor": "text-yellow-100"
+        "scriptColor": "text-orange-100"
     },
     {
         "id": 3,

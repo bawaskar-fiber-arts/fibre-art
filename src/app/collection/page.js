@@ -36,9 +36,9 @@ function CollectionContent() {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Little content at top */}
-            <div className="bg-[#FAF9F6] py-8 text-center px-4">
-                <h1 className="text-4xl font-serif text-gray-900 mb-2">Our Exclusive Collection</h1>
-                <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+            <div className="bg-cream py-8 text-center px-4">
+                <h1 className="text-4xl font-serif text-espresso mb-2">Our Exclusive Collection</h1>
+                <p className="text-muted max-w-2xl mx-auto text-sm md:text-base">
                     Discover our premium range of handcrafted idols, home decor, and spiritual essentials,
                     meticulously designed to bring peace and prosperity to your life.
                 </p>
@@ -59,7 +59,7 @@ function CollectionContent() {
 
 export default function CollectionPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-ivory">
             <Header />
             <Suspense fallback={<div>Loading...</div>}>
                 <CollectionContent />

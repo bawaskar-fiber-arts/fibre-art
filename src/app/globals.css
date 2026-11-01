@@ -5,15 +5,35 @@
   --font-serif: var(--font-serif);
   --font-script: var(--font-script);
   
-  --color-gold: #D4AF37;
-  --color-gold-light: #F4E5B0;
+  /* Temple heritage palette: ivory + sandstone surfaces, espresso text,
+     bhagwa saffron accents, kumkum maroon for primary actions. */
+  --color-ivory: #FBF7EF;       /* page background */
+  --color-cream: #F4ECDD;       /* alternate sections, image wells */
+  --color-sand: #E6D9C2;        /* borders, dividers, skeletons */
+
+  --color-saffron: #FF9933;       /* bhagwa: fills, rings, text on dark only */
+  --color-saffron-light: #FFE1BF; /* soft saffron tints, icon backgrounds */
+  --color-saffron-deep: #A84A0A;  /* saffron for text/icons on light backgrounds */
+
+  --color-maroon: #7A1F24;      /* primary buttons, link hover */
+  --color-maroon-dark: #5C161A; /* primary hover */
+
+  --color-espresso: #2B1B17;    /* headings, dark sections, footer */
+  --color-ink: #3B2A22;         /* body text */
+  --color-muted: #6B5A4E;       /* secondary text */
+
   --color-svastika-brown: #3B2418;
   --color-svastika-bg: #E8DDCC;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-ivory);
+  --foreground: var(--color-ink);
+}
+
+::selection {
+  background-color: var(--color-saffron-light);
+  color: var(--color-espresso);
 }
 
 /* Reset for standard elements */

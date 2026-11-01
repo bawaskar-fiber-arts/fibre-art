@@ -46,21 +46,21 @@ export default function Category({ selectedCategory, onSelectCategory }) {
   };
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-ivory">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-serif text-center text-[#2B1B17] mb-10 tracking-wide"
+          className="text-3xl font-serif text-center text-espresso mb-10 tracking-wide"
         >
-          Category
+          Shop by Category
         </motion.h2>
 
         {loading ? (
           <div className="flex justify-center items-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D4AF37]"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-saffron"></div>
           </div>
         ) : (
           <motion.div
@@ -80,7 +80,7 @@ export default function Category({ selectedCategory, onSelectCategory }) {
                 className="group flex flex-col items-center focus:outline-none"
               >
                 <div
-                  className={`relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg transition-shadow duration-300 group-hover:-translate-y-2 bg-white ${selectedCategory === cat.name ? 'ring-4 ring-[#AF984E]' : ''}`}
+                  className={`relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg transition-shadow duration-300 group-hover:-translate-y-2 bg-white ${selectedCategory === cat.name ? 'ring-4 ring-saffron' : ''}`}
                 >
                   <Image
                     src={cat.image}
@@ -94,7 +94,7 @@ export default function Category({ selectedCategory, onSelectCategory }) {
                     </div>
                   )}
                 </div>
-                <span className={`mt-4 text-[10px] md:text-xs font-bold tracking-widest uppercase text-center max-w-[120px] ${(cat.name === "ALL" || selectedCategory === cat.name) ? 'text-[#AF984E]' : 'text-[#4A4A4A] group-hover:text-[#AF984E]'
+                <span className={`mt-4 text-[10px] md:text-xs font-bold tracking-widest uppercase text-center max-w-[120px] ${(cat.name === "ALL" || selectedCategory === cat.name) ? 'text-saffron-deep' : 'text-ink group-hover:text-saffron-deep'
                   }`}>
                   {cat.name}
                 </span>

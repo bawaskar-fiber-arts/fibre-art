@@ -40,9 +40,9 @@ const items = [
 
 export default function WhatsNew() {
     return (
-        <section className="py-16 bg-[#FAF9F6]">
+        <section className="py-16 bg-cream">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-4xl font-serif text-center text-gray-800 mb-12">
+                <h2 className="text-3xl md:text-4xl font-serif text-center text-espresso mb-12">
                     What's new on Bawaskar
                 </h2>
 

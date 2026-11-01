@@ -3,16 +3,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { ChevronRight, ChevronLeft, MessageCircle } from 'lucide-react';
 import slides from "../data/hero.json";
 import { motion, AnimatePresence } from "framer-motion";
+import { whatsappLink } from "@/lib/contact";
+
+const TAGLINE = "Handcrafted Fiber Idols & Statues · Made to Order";
 
 // --- Mobile Component ---
 function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative w-full h-[calc(100vh-60px)] overflow-hidden flex flex-col bg-black">
+    <section className="relative w-full h-[calc(100svh-96px)] min-h-[560px] max-h-[760px] overflow-hidden flex flex-col bg-black">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -33,6 +36,12 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
       {/* Content Container */}
       <div className="relative z-10 flex flex-col h-full w-full">
 
+        {/* What we make, visible before anything else */}
+        <p className={`pt-5 px-4 text-center text-[11px] font-semibold tracking-[0.2em] uppercase leading-relaxed ${slide.isLight ? 'text-saffron-deep' : 'text-saffron-light'}`}>
+          Handcrafted Fiber Idols &amp; Statues
+          <span className={`block ${slide.isLight ? 'text-maroon' : 'text-saffron'}`}>Made to Order</span>
+        </p>
+
         {/* Main Content Area (Image + Text) */}
         <motion.div
           className="flex-1 flex flex-col items-center justify-center p-4"
@@ -46,7 +55,7 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
           }}
         >
           {/* Image - Upper Half */}
-          <div className="relative w-full h-[45vh] mb-4">
+          <div className="relative w-full h-[34svh] mb-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -60,7 +69,7 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
               </motion.div>
             </AnimatePresence>
             {/* Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-yellow-500/20 blur-[60px] rounded-full -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-orange-500/20 blur-[60px] rounded-full -z-10"></div>
           </div>
 
           {/* Text - Lower Half */}
@@ -77,15 +86,26 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
                 <span className={`block font-script text-4xl mb-1 ${slide.scriptColor}`}>{slide.title1}</span>
                 <h1 className={`font-serif text-5xl leading-none ${slide.titleColor}`}>{slide.title2}</h1>
                 <h1 className={`font-serif text-4xl leading-none mt-1 ${slide.accentColor}`}>{slide.title3}</h1>
-                <p className={`text-sm mt-3 font-light tracking-wide max-w-[80%] mx-auto ${slide.isLight ? 'text-gray-800' : 'text-gray-200'}`}>
+                <p className={`text-sm mt-3 font-light tracking-wide max-w-[80%] mx-auto ${slide.isLight ? 'text-espresso' : 'text-gray-200'}`}>
                   {slide.subtitle}
                 </p>
-
-                <Link href="/collection" className="inline-block mt-6 px-8 py-3 bg-[#D4AF37] text-white text-sm font-bold tracking-wider rounded-full shadow-lg active:scale-95 transition-transform">
-                  EXPLORE
-                </Link>
               </motion.div>
             </AnimatePresence>
+
+            <div className="flex gap-3 mt-6">
+              <Link href="/collection" className="px-6 py-3 bg-saffron text-espresso text-sm font-bold tracking-wider rounded-full shadow-lg active:scale-95 transition-transform">
+                BROWSE
+              </Link>
+              <Link
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-6 py-3 text-sm font-bold tracking-wider rounded-full border active:scale-95 transition-transform ${slide.isLight ? 'border-espresso text-espresso' : 'border-ivory/70 text-ivory'}`}
+              >
+                <MessageCircle size={16} />
+                GET A QUOTE
+              </Link>
+            </div>
           </div>
         </motion.div>
 
@@ -95,7 +115,7 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
             <button
               key={idx}
               onClick={() => setSlide(idx)}
-              className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? 'bg-[#D4AF37] w-6' : 'bg-white/40'}`}
+              className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? 'bg-saffron w-6' : 'bg-white/40'}`}
             />
           ))}
         </div>
@@ -109,7 +129,7 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative w-full h-[calc(100vh-76px)] overflow-hidden flex items-center justify-center bg-black -mt-1">
+    <section className="relative w-full h-[calc(100svh-112px)] min-h-[600px] max-h-[860px] overflow-hidden flex items-center justify-center bg-black">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -130,6 +150,11 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
       <div className="container mx-auto px-6 h-full flex flex-row items-center relative z-10">
         {/* Left Text */}
         <div className="w-1/2 flex flex-col justify-center items-start">
+          {/* What we make, visible before anything else */}
+          <p className={`mb-6 px-4 py-1.5 rounded-full border text-xs lg:text-sm font-semibold tracking-[0.15em] uppercase backdrop-blur-sm ${slide.isLight ? 'border-saffron-deep/30 bg-ivory/70 text-saffron-deep' : 'border-saffron/40 bg-black/30 text-saffron-light'}`}>
+            {TAGLINE}
+          </p>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -139,28 +164,39 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
               transition={{ duration: 0.7 }}
               className="relative text-left"
             >
-              <span className={`font-script text-8xl absolute -top-14 left-0 z-10 drop-shadow-md ${slide.scriptColor} whitespace-nowrap`}>
+              <span className={`block font-script text-5xl lg:text-6xl xl:text-7xl -mb-2 relative z-10 drop-shadow-md ${slide.scriptColor} whitespace-nowrap`}>
                 {slide.title1}
               </span>
-              <h1 className={`font-serif text-9xl leading-[0.9] mt-2 ${slide.titleColor}`}>
+              <h1 className={`font-serif text-7xl lg:text-8xl xl:text-9xl leading-[0.9] ${slide.titleColor}`}>
                 {slide.title2}
               </h1>
-              <h1 className={`font-serif text-8xl leading-[0.9] ml-16 transform translate-x-4 ${slide.accentColor}`}>
+              <h1 className={`font-serif text-6xl lg:text-7xl xl:text-8xl leading-[0.9] ml-16 transform translate-x-4 ${slide.accentColor}`}>
                 {slide.title3}
               </h1>
-              <h2 className={`font-serif text-4xl text-right w-full mt-4 pr-10 ${slide.isLight ? 'text-gray-800' : 'text-white'}`}>
+              <h2 className={`font-serif text-2xl lg:text-3xl text-right w-full mt-4 pr-10 ${slide.isLight ? 'text-espresso' : 'text-white'}`}>
                 {slide.subtitle}
               </h2>
 
-              <p className={`text-2xl font-light mt-8 tracking-wide max-w-lg ${slide.isLight ? 'text-gray-700' : 'text-white/90'}`}>
+              <p className={`text-lg lg:text-xl font-light mt-4 tracking-wide max-w-lg ${slide.isLight ? 'text-ink' : 'text-white/90'}`}>
                 {slide.desc}
               </p>
-
-              <Link href="/collection" className="inline-block mt-10 px-10 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B4941F] text-white font-bold text-lg rounded shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
-                Explore Collection
-              </Link>
             </motion.div>
           </AnimatePresence>
+
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Link href="/collection" className="px-8 py-4 bg-gradient-to-r from-saffron-light via-saffron to-saffron text-espresso font-bold text-lg rounded shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+              Browse Collection
+            </Link>
+            <Link
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 px-8 py-4 border-2 font-bold text-lg rounded transition-colors ${slide.isLight ? 'border-espresso text-espresso hover:bg-espresso hover:text-ivory' : 'border-ivory/70 text-ivory hover:bg-ivory hover:text-espresso'}`}
+            >
+              <MessageCircle size={20} />
+              Get a Quote
+            </Link>
+          </div>
         </div>
 
         {/* Right Image */}
@@ -172,13 +208,13 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
               animate={{ scale: 1, opacity: 1, x: 0 }}
               exit={{ scale: 1.1, opacity: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative w-[500px] h-[700px] drop-shadow-2xl"
+              className="relative h-[80%] max-h-[700px] aspect-[5/7] drop-shadow-2xl"
             >
               <Image src={slide.image} alt={slide.title2} fill className="object-contain" priority />
             </motion.div>
           </AnimatePresence>
           {/* Glow */}
-          <div className={`absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-${slide.isLight ? 'white' : 'yellow-500'}/10 blur-[120px] rounded-full -z-10 transform -translate-x-1/2 -translate-y-1/2`}></div>
+          <div className={`absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-${slide.isLight ? 'white' : 'orange-500'}/10 blur-[120px] rounded-full -z-10 transform -translate-x-1/2 -translate-y-1/2`}></div>
         </div>
       </div>
 
@@ -196,7 +232,7 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
           <button
             key={idx}
             onClick={() => setSlide(idx)}
-            className={`transition-all duration-300 rounded-full border border-white/30 ${idx === currentSlide ? 'w-4 h-4 bg-[#D4AF37] border-none' : 'w-4 h-4 bg-transparent hover:bg-white/20'}`}
+            className={`transition-all duration-300 rounded-full border border-white/30 ${idx === currentSlide ? 'w-4 h-4 bg-saffron border-none' : 'w-4 h-4 bg-transparent hover:bg-white/20'}`}
           />
         ))}
       </div>

@@ -27,22 +27,22 @@ export default function GalleryPage() {
     }, []);
 
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-ivory">
             <Header />
             
-            <section className="py-12 md:py-20 bg-[#F9F6F0]">
+            <section className="py-12 md:py-20 bg-cream">
                 <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-3xl md:text-5xl font-serif text-gray-800 mb-6">Gallery</h1>
-                    <p className="max-w-xl mx-auto text-gray-600 mb-12">
+                    <h1 className="text-3xl md:text-5xl font-serif text-espresso mb-6">Gallery</h1>
+                    <p className="max-w-xl mx-auto text-muted mb-12">
                         A visual journey through our finest creations. Experience the detailing and craftsmanship of our idols.
                     </p>
                     
                     {loading ? (
                         <div className="flex justify-center items-center py-12">
-                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D4AF37]"></div>
+                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-saffron"></div>
                         </div>
                     ) : galleryImages.length === 0 ? (
-                        <div className="text-center text-gray-400 py-10">
+                        <div className="text-center text-muted/70 py-10">
                             <p>No images in gallery yet.</p>
                         </div>
                     ) : (

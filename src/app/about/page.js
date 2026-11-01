@@ -26,16 +26,16 @@ export default function AboutPage() {
     }, []);
 
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-ivory">
             <Header />
 
             {/* Intro Hero */}
-            <section className="relative py-20 bg-[#2B1B17] text-[#F9F6F0] text-center overflow-hidden">
+            <section className="relative py-20 bg-espresso text-ivory text-center overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.png" alt="bg" fill className="object-cover" />
                 </div>
                 <div className="relative z-10 container mx-auto px-4">
-                    <h1 className="font-serif text-4xl md:text-6xl text-[#D4AF37] mb-4">About Us</h1>
+                    <h1 className="font-serif text-4xl md:text-6xl text-saffron mb-4">About Us</h1>
                     <p className="text-lg font-light tracking-wide max-w-2xl mx-auto">
                         Preserving heritage through art, crafting devotion with passion.
                     </p>
@@ -48,7 +48,7 @@ export default function AboutPage() {
                     <div className="w-full md:w-1/2 relative h-[400px]">
                         {loading ? (
                             <div className="flex justify-center items-center h-full">
-                                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D4AF37]"></div>
+                                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-saffron"></div>
                             </div>
                         ) : (
                             <>
@@ -59,26 +59,26 @@ export default function AboutPage() {
                                     className="object-cover rounded-lg shadow-xl"
                                 />
                                 {/* Decorative element */}
-                                <div className="absolute -z-10 top-10 -left-10 w-full h-full bg-[#f4e5b0] rounded-full blur-[80px] opacity-60"></div>
+                                <div className="absolute -z-10 top-10 -left-10 w-full h-full bg-saffron-light rounded-full blur-[80px] opacity-60"></div>
                             </>
                         )}
                     </div>
                     <div className="w-full md:w-1/2">
-                        <h2 className="text-3xl font-serif text-gray-800 mb-6">Our Journey</h2>
+                        <h2 className="text-3xl font-serif text-espresso mb-6">Our Journey</h2>
                         {loading ? (
                             <div className="animate-pulse space-y-4">
-                                <div className="h-4 bg-gray-200 rounded w-full"></div>
-                                <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                                <div className="h-4 bg-gray-200 rounded w-full"></div>
+                                <div className="h-4 bg-sand rounded w-full"></div>
+                                <div className="h-4 bg-sand rounded w-5/6"></div>
+                                <div className="h-4 bg-sand rounded w-full"></div>
                             </div>
                         ) : aboutData.title ? (
-                            <p className="text-gray-600 leading-relaxed whitespace-pre-line">{aboutData.title}</p>
+                            <p className="text-muted leading-relaxed whitespace-pre-line">{aboutData.title}</p>
                         ) : (
                             <>
-                                <p className="text-gray-600 leading-relaxed mb-4">
+                                <p className="text-muted leading-relaxed mb-4">
                                     Bawaskar Fiber Arts began with a simple mission: to bring the divine presence into homes through exquisitely crafted idols. What started as a small workshop has grown into a renowned name in premium fiber and metal art.
                                 </p>
-                                <p className="text-gray-600 leading-relaxed">
+                                <p className="text-muted leading-relaxed">
                                     Inspired by the rich cultural heritage of India, our artisans pour their heart and soul into every creation. From the majestic statues of Chhatrapati Shivaji Maharaj to the serene idols of Lord Ganesha, each piece tells a story of devotion, tradition, and artistic excellence.
                                 </p>
                             </>
@@ -88,33 +88,33 @@ export default function AboutPage() {
             </section>
 
             {/* Our Process */}
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-ivory">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-serif text-center text-gray-800 mb-12">The Art of Creation</h2>
+                    <h2 className="text-3xl font-serif text-center text-espresso mb-12">The Art of Creation</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center">
                             <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                                 <Image src="/all_category_bg.png" alt="Sketching" fill className="object-cover hover:scale-110 transition-transform duration-700" />
                                 <div className="absolute inset-0 bg-black/20"></div>
                             </div>
-                            <h3 className="text-xl font-serif font-bold text-[#D4AF37] mb-2">1. The Vision</h3>
-                            <p className="text-gray-600 leading-relaxed font-light">Every masterpiece begins with a prayer and a sketch. Our artists visualize the divine form, ensuring strict adherence to Shilpa Shastra.</p>
+                            <h3 className="text-xl font-serif font-bold text-saffron-deep mb-2">1. The Vision</h3>
+                            <p className="text-muted leading-relaxed font-light">Every masterpiece begins with a prayer and a sketch. Our artists visualize the divine form, ensuring strict adherence to Shilpa Shastra.</p>
                         </div>
                         <div className="text-center">
                             <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                                 <Image src="/workshop.png" alt="Molding" fill className="object-cover hover:scale-110 transition-transform duration-700" />
                                 <div className="absolute inset-0 bg-black/20"></div>
                             </div>
-                            <h3 className="text-xl font-serif font-bold text-[#D4AF37] mb-2">2. Handcrafting</h3>
-                            <p className="text-gray-600 leading-relaxed font-light">Using clay, wax, and fiber, the idol takes shape. Hands that have shaped thousands of deities work with precision and devotion.</p>
+                            <h3 className="text-xl font-serif font-bold text-saffron-deep mb-2">2. Handcrafting</h3>
+                            <p className="text-muted leading-relaxed font-light">Using clay, wax, and fiber, the idol takes shape. Hands that have shaped thousands of deities work with precision and devotion.</p>
                         </div>
                         <div className="text-center">
                             <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                                 <Image src="/vitthal_rukhmini.png" alt="Finishing" fill className="object-cover hover:scale-110 transition-transform duration-700" />
                                 <div className="absolute inset-0 bg-black/20"></div>
                             </div>
-                            <h3 className="text-xl font-serif font-bold text-[#D4AF37] mb-2">3. The Soul Prana</h3>
-                            <p className="text-gray-600 leading-relaxed font-light">The final touches—painting the eyes, polishing the ornaments—breathe life into the idol, making it ready for your home.</p>
+                            <h3 className="text-xl font-serif font-bold text-saffron-deep mb-2">3. The Soul Prana</h3>
+                            <p className="text-muted leading-relaxed font-light">The final touches—painting the eyes, polishing the ornaments—breathe life into the idol, making it ready for your home.</p>
                         </div>
                     </div>
                 </div>
@@ -124,10 +124,10 @@ export default function AboutPage() {
             <Services />
 
             {/* Vision */}
-            <section className="py-16 bg-[#F9F6F0]">
+            <section className="py-16 bg-cream">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-serif text-gray-800 mb-8">Our Vision</h2>
-                    <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed text-lg">
+                    <h2 className="text-3xl font-serif text-espresso mb-8">Our Vision</h2>
+                    <p className="max-w-3xl mx-auto text-muted leading-relaxed text-lg">
                         To becomes the global torchbearer of Indian craftsmanship, ensuring that our rich legacy of art and spirituality adorns homes worldwide. We strive to blend traditional aesthetics with modern durability, ensuring our culture stands the test of time.
                     </p>
                 </div>

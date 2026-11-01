@@ -30,15 +30,15 @@ const blogs = [
 
 export default function Blogs() {
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-ivory">
             <div className="container mx-auto px-4">
 
                 <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
                     <div>
-                        <p className="text-gray-500 uppercase tracking-widest text-sm mb-2">Unveiling Spiritual Wisdom</p>
-                        <h2 className="text-3xl md:text-4xl font-serif text-gray-800">Our Blogs</h2>
+                        <p className="text-muted uppercase tracking-widest text-sm mb-2">Unveiling Spiritual Wisdom</p>
+                        <h2 className="text-3xl md:text-4xl font-serif text-espresso">Our Blogs</h2>
                     </div>
-                    <Link href="#" className="bg-[#D4AF37] text-white px-6 py-3 rounded text-sm font-medium hover:bg-[#B5952F] transition-colors">
+                    <Link href="#" className="bg-maroon text-ivory px-6 py-3 rounded text-sm font-medium hover:bg-maroon-dark transition-colors">
                         MORE BLOGS
                     </Link>
                 </div>
@@ -56,10 +56,10 @@ export default function Blogs() {
                                 {/* Overlay Logo Watermark style */}
                                 <div className="absolute top-2 right-2 text-white/50 text-[10px]">bawaskar</div>
                             </div>
-                            <h3 className="text-lg font-serif text-gray-800 leading-tight mb-3 group-hover:text-[#D4AF37] transition-colors">
+                            <h3 className="text-lg font-serif text-espresso leading-tight mb-3 group-hover:text-maroon transition-colors">
                                 {blog.title}
                             </h3>
-                            <Link href={blog.link} className="text-sm text-gray-500 underline decoration-gray-300 underline-offset-4 hover:text-black transition-colors">
+                            <Link href={blog.link} className="text-sm text-muted underline decoration-sand underline-offset-4 hover:text-maroon transition-colors">
                                 READ MORE
                             </Link>
                         </div>

@@ -8,8 +8,8 @@ export default function CustomOrder() {
     return (
         <section className="py-20 relative overflow-hidden bg-gradient-to-r from-maroon-dark via-maroon to-maroon-dark">
             <div className="container mx-auto px-4 relative z-10 text-center text-ivory">
-                <p className="text-gold-light uppercase tracking-widest text-sm mb-3">Custom Orders</p>
-                <h2 className="text-4xl md:text-5xl font-serif text-gold mb-6 drop-shadow-sm">
+                <p className="text-saffron-light uppercase tracking-widest text-sm mb-3">Custom Orders</p>
+                <h2 className="text-4xl md:text-5xl font-serif text-saffron mb-6 drop-shadow-sm">
                     Have a Design in Mind?
                 </h2>
 
@@ -23,7 +23,7 @@ export default function CustomOrder() {
                         href={whatsappLink(CUSTOM_MESSAGE)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-gold hover:bg-gold-light text-espresso font-semibold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105"
+                        className="flex items-center gap-2 bg-saffron hover:bg-saffron-light text-espresso font-semibold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105"
                     >
                         <MessageCircle size={20} />
                         Discuss on WhatsApp
