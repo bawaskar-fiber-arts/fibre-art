@@ -11,8 +11,7 @@ import { PHONE_DISPLAY, PHONE_HREF, whatsappLink } from '@/lib/contact';
 export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [scrollY, setScrollY] = useState(0);
     const [searchTerm, setSearchTerm] = useState("");
     const router = useRouter();
 
@@ -26,21 +25,15 @@ export default function Header() {
 
 
 
-    // Scroll Logic
+    // Track scroll position for the navbar shadow and the floating WhatsApp button.
+    // The navbar itself always stays visible (sticky).
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY < lastScrollY || currentScrollY < 50) {
-                setIsVisible(true);
-            } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                setIsVisible(false);
-            }
-            setLastScrollY(currentScrollY);
-        };
+        const handleScroll = () => setScrollY(window.scrollY);
 
+        handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+    }, []);
 
     const handleSearch = (e) => {
         if (e.key === 'Enter') {
@@ -71,9 +64,8 @@ export default function Header() {
 
             {/* Main Navbar */}
             <nav
-                className={`w-full font-sans border-b border-sand/50 sticky top-0 z-40 transition-all duration-300 transform
-                ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'}
-                ${lastScrollY > 10 ? 'bg-ivory/85 backdrop-blur-md shadow-sm' : 'bg-ivory'} 
+                className={`w-full font-sans border-b border-sand/50 sticky top-0 z-40 transition-[background-color,box-shadow] duration-300
+                ${scrollY > 10 ? 'bg-ivory/90 backdrop-blur-md shadow-md' : 'bg-ivory'}
                 `}
             >
                 <div className="px-4 lg:px-8 py-3 flex items-center justify-between gap-4">
@@ -194,7 +186,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Order on WhatsApp"
-                className={`fixed bottom-5 right-5 z-40 ${lastScrollY > 400 ? 'flex' : 'flex md:hidden'} items-center gap-2 bg-green-700 hover:bg-green-800 text-white rounded-full shadow-xl p-3.5 md:px-5 md:py-3 transition-transform hover:scale-105`}
+                className={`fixed bottom-5 right-5 z-40 ${scrollY > 400 ? 'flex' : 'flex md:hidden'} items-center gap-2 bg-green-700 hover:bg-green-800 text-white rounded-full shadow-xl p-3.5 md:px-5 md:py-3 transition-transform hover:scale-105`}
             >
                 <MessageCircle size={24} className="fill-current" />
                 <span className="hidden md:inline text-sm font-semibold">Order on WhatsApp</span>
