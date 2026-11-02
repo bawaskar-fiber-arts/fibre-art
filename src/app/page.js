@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <StructuredData />
       <main className="min-h-screen flex flex-col bg-ivory">
-        <Header />
+        <Header transparent />
         <Hero />
         <PromiseSection />
         <Category

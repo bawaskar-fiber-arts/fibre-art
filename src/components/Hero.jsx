@@ -15,7 +15,7 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative w-full h-[calc(100svh-96px)] min-h-[560px] max-h-[760px] overflow-hidden flex flex-col bg-black">
+    <section className="relative w-full h-[calc(100svh-32px)] min-h-[600px] max-h-[820px] overflow-hidden flex flex-col bg-black">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -37,7 +37,7 @@ function MobileHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
       <div className="relative z-10 flex flex-col h-full w-full">
 
         {/* What we make, visible before anything else */}
-        <p className={`pt-5 px-4 text-center text-[11px] font-semibold tracking-[0.2em] uppercase leading-relaxed ${slide.isLight ? 'text-saffron-deep' : 'text-saffron-light'}`}>
+        <p className={`pt-[4.5rem] px-4 text-center text-[11px] font-semibold tracking-[0.2em] uppercase leading-relaxed ${slide.isLight ? 'text-saffron-deep' : 'text-saffron-light'}`}>
           Handcrafted Fiber Idols &amp; Statues
           <span className={`block ${slide.isLight ? 'text-maroon' : 'text-saffron'}`}>Made to Order</span>
         </p>
@@ -129,7 +129,7 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative w-full h-[calc(100svh-112px)] min-h-[600px] max-h-[860px] overflow-hidden flex items-center justify-center bg-black">
+    <section className="relative w-full h-[calc(100svh-36px)] min-h-[660px] max-h-[920px] overflow-hidden flex items-center justify-center bg-black">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -147,7 +147,7 @@ function DesktopHero({ currentSlide, nextSlide, prevSlide, setSlide }) {
         </motion.div>
       </AnimatePresence>
 
-      <div className="container mx-auto px-6 h-full flex flex-row items-center relative z-10">
+      <div className="container mx-auto px-6 pt-16 h-full flex flex-row items-center relative z-10">
         {/* Left Text */}
         <div className="w-1/2 flex flex-col justify-center items-start">
           {/* What we make, visible before anything else */}

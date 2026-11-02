@@ -8,7 +8,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { PHONE_DISPLAY, PHONE_HREF, whatsappLink } from '@/lib/contact';
 
-export default function Header() {
+// `transparent`: the bar floats over a dark hero (homepage) until the visitor scrolls.
+export default function Header({ transparent = false }) {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -34,6 +35,10 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // See-through only at the very top, and solid while a menu is open so it stays readable.
+    const overHero = transparent && scrollY < 10 && !isMobileMenuOpen && !isSearchOpen;
+    const iconColor = overHero ? 'text-ivory hover:text-saffron' : 'text-ink hover:text-maroon';
 
     const handleSearch = (e) => {
         if (e.key === 'Enter') {
@@ -62,41 +67,46 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Main Navbar */}
+            {/* Main Navbar: see-through over the homepage hero, frosted glass everywhere else */}
             <nav
-                className={`w-full font-sans border-b border-sand/50 sticky top-0 z-40 transition-[background-color,box-shadow] duration-300
-                ${scrollY > 10 ? 'bg-ivory/90 backdrop-blur-md shadow-md' : 'bg-ivory'}
+                className={`w-full font-sans sticky top-0 z-40 border-b transition-[background-color,box-shadow,border-color] duration-300
+                ${transparent ? '-mb-14 md:-mb-16' : ''}
+                ${overHero
+                    ? 'bg-gradient-to-b from-black/60 via-black/25 to-transparent border-transparent'
+                    : `bg-ivory/75 backdrop-blur-lg backdrop-saturate-150 border-sand/50 ${scrollY > 10 ? 'shadow-md' : ''}`}
                 `}
             >
-                <div className="px-4 lg:px-8 py-3 flex items-center justify-between gap-4">
+                <div className="h-14 md:h-16 px-4 lg:px-8 flex items-center justify-between gap-4">
 
                     {/* Left: Mobile Menu & Logo */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3 md:gap-4">
                         <button
-                            className="lg:hidden p-1 text-ink hover:text-maroon"
+                            className={`lg:hidden p-1 -ml-1 transition-colors ${iconColor}`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                            aria-expanded={isMobileMenuOpen}
                         >
                             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
 
                         <Link href="/" className="flex items-center gap-2 relative group">
                             <div className="relative w-8 h-8 md:w-10 md:h-10 shrink-0">
-                                <Image src="/logo-b.png" alt="B Logo" fill className="object-contain" />
+                                <Image src="/logo-mark.png" alt="Bawaskar Fiber Arts logo" fill sizes="40px" className="object-contain" priority />
                             </div>
-                            <span className="text-lg md:text-xl font-serif text-saffron-deep tracking-tight leading-none flex flex-col">
+                            <span className={`text-lg md:text-xl font-serif tracking-tight leading-none flex flex-col transition-colors ${overHero ? 'text-saffron' : 'text-saffron-deep'}`}>
                                 Bawaskar
-                                <span className="text-[10px] md:text-xs text-muted font-sans tracking-widest uppercase">Fiber Arts</span>
+                                <span className={`text-[10px] md:text-xs font-sans tracking-widest uppercase transition-colors ${overHero ? 'text-ivory/80' : 'text-muted'}`}>Fiber Arts</span>
                             </span>
                         </Link>
                     </div>
 
                     {/* Center: Desktop Nav Links */}
-                    <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-ink">
+                    <div className={`hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium transition-colors ${overHero ? 'text-ivory' : 'text-ink'}`}>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="hover:text-maroon transition-colors uppercase tracking-wide text-xs xl:text-sm"
+                                className={`transition-colors uppercase tracking-wide text-xs xl:text-sm ${overHero ? 'hover:text-saffron' : 'hover:text-maroon'}`}
                             >
                                 {link.name}
                             </Link>
@@ -113,17 +123,20 @@ export default function Header() {
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 onKeyDown={handleSearch}
-                                className="w-40 lg:w-48 xl:w-60 border border-sand rounded-full py-1.5 pl-4 pr-8 text-sm focus:outline-none focus:border-saffron-deep transition-all bg-transparent"
+                                className={`w-40 lg:w-48 xl:w-60 border rounded-full py-1.5 pl-4 pr-8 text-sm focus:outline-none transition-all ${overHero
+                                    ? 'border-ivory/40 bg-black/20 text-ivory placeholder:text-ivory/70 focus:border-saffron'
+                                    : 'border-sand bg-white/60 text-ink focus:border-saffron-deep'}`}
                             />
-                            <button onClick={handleSearchClick}>
-                                <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-muted/70 hover:text-maroon cursor-pointer" size={16} />
+                            <button onClick={handleSearchClick} aria-label="Search">
+                                <Search className={`absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer ${overHero ? 'text-ivory/80 hover:text-saffron' : 'text-muted/70 hover:text-maroon'}`} size={16} />
                             </button>
                         </div>
 
                         {/* Mobile Search Icon */}
                         <button
-                            className="md:hidden text-ink hover:text-maroon"
+                            className={`md:hidden p-1 transition-colors ${iconColor}`}
                             onClick={() => setIsSearchOpen(!isSearchOpen)}
+                            aria-label="Search"
                         >
                             <Search size={22} />
                         </button>
@@ -134,7 +147,7 @@ export default function Header() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Order on WhatsApp"
-                            className="flex items-center gap-2 text-green-700 hover:text-green-800 xl:bg-green-700 xl:hover:bg-green-800 xl:text-white xl:hover:text-white xl:px-4 xl:py-2 xl:rounded-full transition-colors"
+                            className={`flex items-center gap-2 p-1 xl:p-0 ${overHero ? 'text-green-400 hover:text-green-300' : 'text-green-700 hover:text-green-800'} xl:bg-green-700 xl:hover:bg-green-800 xl:text-white xl:hover:text-white xl:px-4 xl:py-2 xl:rounded-full transition-colors`}
                         >
                             <MessageCircle size={22} className="fill-current xl:w-4 xl:h-4" />
                             <span className="hidden xl:inline text-sm font-semibold">Order on WhatsApp</span>
